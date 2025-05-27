@@ -13,7 +13,7 @@ document.getElementById('uploadForm').addEventListener('submit', async function(
   formData.append("author", document.getElementById('bookAuthor').value);
   formData.append("file", document.getElementById('bookFile').files[0]);
 
-  const response = await fetch('http://localhost:3000/upload', {
+  const response = await fetch('https://blind-book-reader-backendd.onrender.com/upload', {
     method: 'POST',
     body: formData
   });
@@ -35,7 +35,7 @@ recognition.lang = 'en-US';
 
 // --- Read Available Books + Start Voice Listening ---
 startBtn.onclick = async () => {
-  const res = await fetch('http://localhost:3000/books');
+  const res = await fetch('https://blind-book-reader-backendd.onrender.com/books');
   const books = await res.json();
 
   if (!books.length) {
@@ -70,7 +70,7 @@ function startListening() {
 }
 
 function matchBookByVoice(saidTitle) {
-  fetch('http://localhost:3000/books')
+  fetch('https://blind-book-reader-backendd.onrender.com/books')
     .then(res => res.json())
     .then(books => {
       const match = books.find(book =>
@@ -101,7 +101,7 @@ function waitForYesToStartReading() {
 
 // --- Load PDF and Split into Paragraphs ---
 function fetchPDFAndRead(filename) {
-  const url = `http://localhost:3000/pdf/${filename}`;
+  const url = `https://blind-book-reader-backendd.onrender.com/pdf/${filename}`;
   pdfjsLib.getDocument(url).promise.then(pdf => {
     let textPromises = [];
     for (let i = 1; i <= pdf.numPages; i++) {
@@ -125,7 +125,7 @@ function readParagraphWithExplanation() {
   }
 
   const para = pdfTextArray[currentParagraphIndex];
-  fetch('http://localhost:3000/explain', {
+  fetch('https://blind-book-reader-backendd.onrender.com/explain', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ paragraph: para })
