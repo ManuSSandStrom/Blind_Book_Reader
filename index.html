@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blind Book Reader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Blind Book Reader</h1>
+
+  <section>
+    <h2>Admin Upload Panel</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="text" id="bookTitle" placeholder="Book Title" required>
+      <input type="text" id="bookAuthor" placeholder="Author Name" required>
+      <input type="file" id="bookFile" accept="application/pdf" required>
+      <button type="submit">Upload Book</button>
+    </form>
+  </section>
+
+  <section>
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+    <button id="resumeBtn">Resume</button>
+  </section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>

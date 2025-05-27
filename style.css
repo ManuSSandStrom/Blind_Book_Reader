@@ -1,0 +1,74 @@
+/* General body styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #f0f4f8, #e6ecff);
+  color: #333;
+  text-align: center;
+  padding: 50px;
+  margin: 0;
+}
+
+/* Headings */
+h1, h2 {
+  color: #3b3b98;
+  margin-bottom: 20px;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="file"] {
+  font-size: 18px;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 8px;
+  border: 2px solid #d1d1e0;
+  width: 280px;
+  background-color: #fff;
+}
+
+/* Buttons */
+button {
+  font-size: 18px;
+  padding: 12px 25px;
+  margin: 10px;
+  border-radius: 12px;
+  border: none;
+  background-color: #4c6ef5;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #3b5bdb;
+  transform: scale(1.05);
+}
+
+/* Form container */
+form {
+  background-color: #ffffffdd;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 16px;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0, 0, 50, 0.1);
+}
+
+/* Buttons group */
+#buttons-container {
+  margin-top: 40px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  input[type="text"],
+  input[type="file"],
+  button {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  form {
+    padding: 20px;
+  }
+}
